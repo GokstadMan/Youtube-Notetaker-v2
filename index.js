@@ -1,4 +1,3 @@
-const { json } = require("express/lib/response");
 
 document.addEventListener("DOMContentLoaded",() =>{
 let videoPlayer = document.getElementById("video-player");
@@ -38,7 +37,21 @@ const deleteNote = (index) => {
     loadNotes();
 }
 
+const createNoteElement = (note,index) => {
+    const noteItem = document.createElement("li");
+    noteItem.classList.add("bg-gray-300","p-2","m-1");
+    noteItem.innerText= note;
 
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "Delete";
+    deleteBtn.classList.add("bg-red-300","m-1");
+
+    deleteBtn.onclick = () => deleteNote(index);
+
+    noteItem.appendChild(deleteBtn);
+    return noteItem;
+
+}
 
 });
 
