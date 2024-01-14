@@ -30,5 +30,15 @@ const saveNote = () => {
         loadNotes();
     }
 }
+
+const deleteNote = (index) => {
+    const notes = JSON.parse(localStorage.getItem("notes") );
+    notes.splice(index,1);
+    localStorage.setItem("notes", JSON.stringify(notes));
+    loadNotes();
+}
+
+
+
 });
 
