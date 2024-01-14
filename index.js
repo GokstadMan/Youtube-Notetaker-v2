@@ -1,3 +1,5 @@
+const { json } = require("express/lib/response");
+
 document.addEventListener("DOMContentLoaded",() =>{
 let videoPlayer = document.getElementById("video-player");
 let videoURL = document.getElementById("video-url-input");
@@ -16,6 +18,17 @@ const loadNotes = () => {
         notesList.appendChild(noteElement);
     });
     noNotesText.style.display = notes.length ? "none" : "block";
-} 
+};
+
+const saveNote = () => {
+    const noteText = noteInput.value.trim();
+    if(noteText) {
+        const notes = JSON.parse(localStorage.getItem("notes")) || [];
+        notes.push(noteText);
+        localStorage.setItem("notes", JSON.stringify(notes));
+        noteInput = "";
+        loadNotes();
+    }
+}
 });
 
