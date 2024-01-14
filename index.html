@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Youtube-notetaker</title>
+</head>
+<body>
+    <header class="bg-gray-700 p-4">
+        <h1 class="text-4xl text-white text-center">Youtube Notetaker</h1>
+    </header>
+    <main class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-6 mx-6">
+        <div id="youtube-section">
+            <iframe id="video-player" class="h-0" title="Youtube video player" frameborder="0"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="mb-2">Video URL:</p>
+            <input id="video-url-input" class="w-full" type="text" placeholder="https://youtube.com">
+            <button id="watch-button" class="bg-red-500 hover:bg-red-700 text-white font-bold text-center w-full py-2 mt-2">Watch!</button>
+        </div>
+        <div id="notetaking-section">
+            <div>
+                <p class="mb-2">Enter Notes:</p>
+                <input id="video-note-taking" class="w-full" type="text" placeholder="Something good goes here..">
+                <button id="save-note-button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold text-center w-full py-2 mt-2">Save Note<button>
+            </div>
+            <div>
+                <h3 class="text-xl mt-4 font-bold">Notes:</h3>
+                <ul id="notes-list">
+                    <p id="no-notes-text" class="bg-gray-200">You haven't saved any notes yet...</p>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!--No footer!-->
+    </footer>
+<script src="index.js"></script> 
+</body>
+</html>
