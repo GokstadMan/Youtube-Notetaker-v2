@@ -1,5 +1,5 @@
-
 document.addEventListener("DOMContentLoaded",() =>{
+
 
     let videoPlayer = document.getElementById("video-player");
     let videoURL = document.getElementById("video-url-input");
@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded",() =>{
     let saveNoteBtn = document.getElementById("save-note-button");
     let noteInput = document.getElementById("video-note-taking");
     let notesList = document.getElementById("notes-list");
-    let saveBtn = document.getElementById("save-note-button");
     let noNotesText = document.getElementById("no-notes-text");
 
     const loadNotes = () => {
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             const notes = JSON.parse(localStorage.getItem("notes")) || [];
             notes.push(noteText);
             localStorage.setItem("notes", JSON.stringify(notes));
-            noteInput = "";
+            noteInput.value = "";
             loadNotes();
         }
     }
@@ -68,10 +67,13 @@ document.addEventListener("DOMContentLoaded",() =>{
             }
             else{alert("Please enter a valid Youtube URL!")}
     })
-
 saveNoteBtn.addEventListener("click",saveNote);
 loadNotes();
-    
+
 });
+
+
+
+
 
 
